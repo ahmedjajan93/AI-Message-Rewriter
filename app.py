@@ -118,7 +118,11 @@ if st.button("✨ Rewrite Message", type="primary"):
                     tone=tone,
                     language=language,
                 )
-                st.markdown("### ✨ Enhanced Message")
-                st.success(rewritten.strip())
+               if not result or result.strip() == "":
+                     st.error("⚠️ The model returned no content. Try again later or switch models.")
+              else:
+                    st.markdown("### ✨ Enhanced Message")
+                    st.success(result.strip())
+                
             except Exception as e:
                 st.error(f"Error: {str(e)}")
