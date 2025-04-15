@@ -17,7 +17,7 @@ if not api_key:
 os.environ["OPENAI_API_KEY"] = api_key
 
 models = {
-    "mistralai/mistral-small-3.1-24b-instruct:free": "Mistral Small 3.1",
+    "openai/gpt-3.5-turbo:free": "gpt-3.5",
     "deepseek/deepseek-chat:free": "deepseek-chat",
     "meta-llama/llama-4-maverick:free": "llama-4-maverick",
     "google/gemini-2.0-flash-thinking-exp:free": "Gemini 2.0 Flash Thinking",
