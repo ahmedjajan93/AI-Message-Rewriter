@@ -3,3 +3,4 @@
   langchain-openai
   openai
   pydantic
+  langchain_community
