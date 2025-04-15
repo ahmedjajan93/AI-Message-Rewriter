@@ -10,8 +10,11 @@ load_dotenv()
 st.set_page_config(page_title="AI Tone & Language Rewriter", layout="centered")
 st.title("📝 AI Message Rewriter")
 st.markdown("Transform your message into the perfect tone and language.")
-
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    st.error("❌ Missing API Key. Please set OPENAI_API_KEY in your .env file")
+    st.stop()  # This will halt the app if no key is found
+os.environ["OPENAI_API_KEY"] = api_key
 
 models = {
     "mistralai/mistral-small-3.1-24b-instruct:free": "Mistral Small 3.1",
